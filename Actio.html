@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Actio! - Organise your tasks</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
     </head>
     <body>
         <header>
@@ -22,16 +22,30 @@
                 <li><a href>Lijst3</a></li>
                 <li><a href>Lijst4</a></li>
             </ul>
+
+            <section class="comment-input">
+            <p>Add a to do element:</p>
+            <input type="text"><button>Add!</button>
+            </section>
+
+            <section class="comments">
+                <p>1e comment</p>
+                <p>2e comment</p>
+                <p>3e comment</p>
+                <p>4e comment</p>
+                <p id="1"></p>
+            </section>
         </main>
 
         <footer>
-            <!--
             <div class="contact">
-                <p>Actio!</p>
-                <p>Faculty of Electrical Engineering, Mathematics and Computer Science, Delft University of Technology</p>
-                <p>Mekelweg 4</p>
-                <p>2628 CD Delft</p>
-            -->
+                <h5>Actio!<br>
+                Faculty of EEMCS,<br>
+                Delft University of Technology<br>
+                Mekelweg 4<br>
+                2628 CD Delft</h5>
         </footer>
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script src="Actio.js"></script>
     </body>
 </html>
