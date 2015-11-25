@@ -2,7 +2,7 @@ var main = function() {
 	"use strict";
 
 	var addToDo = function() {
-		var newButton = $("<button>").text("X");
+		var newButton = $("button").text("X");
 		var newToDo = $("<p>").text($(".comment-input input").val() + " " + newButton);
 		$(".comments").append(newToDo);
 		$(".comment-input input").val("");
