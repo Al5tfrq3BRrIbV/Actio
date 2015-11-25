@@ -23,13 +23,20 @@
                 <li><a href>Lijst4</a></li>
             </ul>
 
-            <section class="comment-input">
+            <section class="add">
             <p>Add a to do element:</p>
-            <input type="text"><button>Add!</button>
+            <input type="text"><button>Add</button>
+            </section>
+
+            <section class="edit">
+            <p>Edit a to do element:</p>
+            <input type="text"><button>Edit</button>
             </section>
 
             <section class="comments">
-                <p id="1">1e to-do <button>X</button></p>
+                <p id="1" contenteditable="true"><input type="checkbox" name="delete"> 1e to-do <button id="1">X</button></p>
+                <p id="2"><input type="checkbox" name="delete"> 2e to-do <button id="2">X</button></p>
+                <p id="3"><input type="checkbox" name="delete"> 3e to-do <button id="3">X</button></p>
                 <p id="p"></p>
             </section>
         </main>
