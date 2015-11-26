@@ -4,22 +4,17 @@ var main = function() {
 	var toDos = 4;
 
 	var addToDo = function(toDos) {
-		//var newButton = $("<button>").text("X");
-		var newCheckBox = document.createElement('input');
-		newCheckBox.type = "checkbox";
-		var newButton = document.createElement('button');
-		newButton.text = "X";
-		//var newToDo = $("<p id='" + toDos + "'>").text($(".add input").val());
-		var newToDo = document.createElement('p');
-		newToDo.id = toDos;
-		newToDo.text = $(".add input").val();
-		newToDo.appendChild(newCheckBox);
-		newToDo.appendChild(newButton);
+		cleanup();
+		var newCheckBox = $('<input type="checkbox">');
+		var newButton = $("<button>").text("X");
+		buttonEvents(newButton);
+		var newToDo = $("<p data-id='" + toDos + "'>").text(" " + $(".add input").val() + " ").append(newButton).prepend(newCheckBox);
 		$(".comments").append(newToDo);
+		$(".add input").val("");
 	};
 
 	var editToDo = function(toDos) {
-		var newCheckBox=$('<input type="checkbox">');
+		/*var newCheckBox=$('<input type="checkbox">');
 		var newText=$(".edit input").val();
 		var i = 0;
 		while(i<toDos)
@@ -30,6 +25,16 @@ var main = function() {
 				$(".edit input").val("");
 			}
 			i++;
+		}*/
+		cleanup();
+		if($(".comments input").prop('checked'))
+		{
+			$(".comments input").filter('checked').parent().remove();
+			addToDo(toDos);
+		}
+		else
+		{
+			document.getElementById("editmessage").innerHTML="Select the items to be edited";
 		}
 	}
 
@@ -43,15 +48,15 @@ var main = function() {
 		}
 	});
 
-	$(".comments button").on("click", function (event) {
-		var id = event.target.id;
-		//document.getElementById("4").innerHTML="Hij doet het";
-		//var elem = document.getElementById("2").innerHTML="";
-		document.getElementById(id).setAttribute("hidden","hidden");
+	function buttonEvents(el){
+		$(el).click(function (event) {
+			$(this).parent().remove();
+		});
+	}
 
-	});
+	buttonEvents($(".comments button"));
 
-	$(".edit button").on("click", function (event) {
+	$(".edit button").click(function (event) {
 		editToDo(toDos);
 	});
 
@@ -61,7 +66,74 @@ var main = function() {
 		}
 	});
 
+	function cleanup(){
+		document.getElementById("editmessage").innerHTML="";
+	};
+
 };
 
 $(document).ready(main);
+
+
+function toDo(name, importance, deadline, done)
+{
+	this.name = name;
+	this.importance = importance;
+	this.deadline = deadline;
+	this.done = false;
+
+	this.setName = function(n)
+	{
+		this.name = n;
+	};
+
+	this.setImportance = function(i)
+	{
+		this.importance = i;
+	};
+
+	this.setDeadline = function(d)
+	{
+		this.deadline = d;
+	};
+
+	this.setDone = function()
+	{
+		this.done = true;
+	};
+
+	this.getName = function()
+	{
+		return this.name;
+	};
+
+	this.getImportance = function()
+	{
+		return this.importance;
+	};
+
+	this.getDeadline = function()
+	{
+		return this.deadline;
+	};
+
+	this.getDone = function()
+	{
+		return this.done;
+	};
+
+	this.toString = function()
+	{
+		var string;
+		if(this.done === false)
+		{
+			string = "To do: ";
+		}
+		else
+		{
+			string = "Done: ";
+		}
+		string = string + this.name + "; Importance: " + this.importance + "; Deadline: " + this.deadline;
+	};
+}
 
