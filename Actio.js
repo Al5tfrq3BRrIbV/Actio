@@ -1,25 +1,50 @@
 var main = function() {
 	"use strict";
 
-	var addToDo = function() {
-		var newButton = $("button").text("X");
-		var newToDo = $("<p>").text($(".comment-input input").val() + " " + newButton);
+	var toDos = 4;
+
+	var addToDo = function(toDos) {
+		//var newButton = $("<button>").text("X");
+		var newButton = $('<input type="button" value="new button"/>');
+		var newToDo = $("<p id='" + toDos + "'>").text($(".add input").val() + " " + newButton);
 		$(".comments").append(newToDo);
-		$(".comment-input input").val("");
+		$(".add input").val("");
+		toDos = toDos + 1;
+	};
+
+	var editToDo = function() {
+		var newCheckBox=$('<input type="checkbox">');
+		var newText=$(".edit input").val();
+		document.getElementById("1").innerHTML=newCheckBox + " " + newText;
+		$(".edit input").val("");
 	}
 
-	$(".comment-input button").on("click", function (event) {
-		addToDo();
+	$(".add button").on("click", function (event) {
+		addToDo(toDos);
 	});
 
-	$(".comment-input input").on("keypress", function (event) {
+	$(".add input").on("keypress", function (event) {
 		if(event.keyCode === 13) {
-			addToDo();
+			addToDo(toDos);
 		}
 	});
 
 	$(".comments button").on("click", function (event) {
-		
+		var id = event.target.id;
+		//document.getElementById("4").innerHTML="Hij doet het";
+		//var elem = document.getElementById("2").innerHTML="";
+		document.getElementById(id).setAttribute("hidden","hidden");
+
+	});
+
+	$(".edit button").on("click", function (event) {
+		editToDo();
+	});
+
+	$(".edit input").on("keypress", function (event) {
+		if(event.keyCode === 13) {
+			editToDo();
+		}
 	});
 
 };
