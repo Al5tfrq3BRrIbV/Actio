@@ -12,11 +12,19 @@ var main = function() {
 		toDos = toDos + 1;
 	};
 
-	var editToDo = function() {
+	var editToDo = function(toDos) {
 		var newCheckBox=$('<input type="checkbox">');
 		var newText=$(".edit input").val();
-		document.getElementById("1").innerHTML=newCheckBox + " " + newText;
-		$(".edit input").val("");
+		var i = 0;
+		while(i<toDos)
+		{
+			if(document.getElementById("box"+i).checked)
+			{
+				document.getElementById(i).innerHTML=newCheckBox + " " + newText;
+				$(".edit input").val("");
+			}
+			i++;
+		}
 	}
 
 	$(".add button").on("click", function (event) {
@@ -38,12 +46,12 @@ var main = function() {
 	});
 
 	$(".edit button").on("click", function (event) {
-		editToDo();
+		editToDo(toDos);
 	});
 
 	$(".edit input").on("keypress", function (event) {
 		if(event.keyCode === 13) {
-			editToDo();
+			editToDo(toDos);
 		}
 	});
 
