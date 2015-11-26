@@ -4,6 +4,7 @@ var main = function() {
 	var toDos = 4;
 
 	var addToDo = function(toDos) {
+		cleanup();
 		var newCheckBox = $('<input type="checkbox">');
 		var newButton = $("<button>").text("X");
 		buttonEvents(newButton);
@@ -25,10 +26,15 @@ var main = function() {
 			}
 			i++;
 		}*/
+		cleanup();
 		if($(".comments input").prop('checked'))
 		{
-			$(".comments input").parent().remove();
+			$(".comments input").filter('checked').parent().remove();
 			addToDo(toDos);
+		}
+		else
+		{
+			document.getElementById("editmessage").innerHTML="Select the items to be edited";
 		}
 	}
 
@@ -59,6 +65,10 @@ var main = function() {
 			editToDo(toDos);
 		}
 	});
+
+	function cleanup(){
+		document.getElementById("editmessage").innerHTML="";
+	};
 
 };
 
