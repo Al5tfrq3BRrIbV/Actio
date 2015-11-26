@@ -5,11 +5,17 @@ var main = function() {
 
 	var addToDo = function(toDos) {
 		//var newButton = $("<button>").text("X");
-		var newButton = $('<input type="button" value="new button"/>');
-		var newToDo = $("<p id='" + toDos + "'>").text($(".add input").val() + " " + newButton);
+		var newCheckBox = document.createElement('input');
+		newCheckBox.type = "checkbox";
+		var newButton = document.createElement('button');
+		newButton.text = "X";
+		//var newToDo = $("<p id='" + toDos + "'>").text($(".add input").val());
+		var newToDo = document.createElement('p');
+		newToDo.id = toDos;
+		newToDo.text = $(".add input").val();
+		newToDo.appendChild(newCheckBox);
+		newToDo.appendChild(newButton);
 		$(".comments").append(newToDo);
-		$(".add input").val("");
-		toDos = toDos + 1;
 	};
 
 	var editToDo = function(toDos) {
