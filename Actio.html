@@ -24,19 +24,29 @@
             </ul>
 
             <section class="add">
-            <p>Add a to do element:</p>
-            <input type="text"><button>Add</button>
-            </section>
+                <p>Add a to do element:</p>
+                <input type="text" size="70"> <button>Add!</button>
+                </section>
 
             <section class="edit">
-            <p>Edit a to do element:</p>
-            <input type="text"><button>Edit</button>
+                <p>Edit a to do element:</p>
+                <input type="text" size="70"> <button>Edit!</button>
+            </section>
+
+            <section class="sort">
+                <p>
+                    <select>
+                        <option value="sortduedate">Sort items by due date</option>
+                        <option value="sortimportance">Sort items by importance</option>
+                    </select> 
+                    <button>Sort!</button>
+                </p>
             </section>
 
             <section class="comments">
-                <p id="1" contenteditable="true"><input type="checkbox" name="delete"> 1e to-do <button id="1">X</button></p>
-                <p id="2"><input type="checkbox" name="delete"> 2e to-do <button id="2">X</button></p>
-                <p id="3"><input type="checkbox" name="delete"> 3e to-do <button id="3">X</button></p>
+                <p id="1" contenteditable="true"><input type="checkbox" name="checkbox" id="box1"> 1e to-do <button id="1">X</button></p>
+                <p id="2"><input type="checkbox" name="checkbox" id="box2"> 2e to-do <button id="2">X</button></p>
+                <p id="3"><input type="checkbox" name="checkbox" id="box3"> 3e to-do <button id="3">X</button></p>
                 <p id="p"></p>
             </section>
         </main>
