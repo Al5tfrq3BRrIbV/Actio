@@ -4,13 +4,25 @@ var main = function() {
 	var toDos = 4;
 
 	var addToDo = function(toDos) {
-		cleanup();
-		var newCheckBox = $('<input type="checkbox">');
-		var newButton = $("<button>").text("X");
-		buttonEvents(newButton);
-		var newToDo = $("<p data-id='" + toDos + "'>").text(" " + $(".add input").val() + " ").append(newButton).prepend(newCheckBox);
-		$(".comments").append(newToDo);
-		$(".add input").val("");
+		if($(".add input").val() !==""){
+			cleanup();
+			var newCheckBox = $('<input type="checkbox">');
+			var newButton = $("<button>").text("X");
+			buttonEvents(newButton);
+			var newToDo = $("<p data-id='" + toDos + "'>").text(" " + $(".add input").val() + " ").append(newButton).prepend(newCheckBox);
+			$(".comments").append(newToDo);
+			$(".add input").val("");
+			toDos++;
+			/*cleanup();
+			var toDo = new toDo($(".add input").val(),1,"01/01/2001");
+			var newCheckBox = $('<input type="checkbox">');
+			var newButton = $("<button>").text("X");
+			buttonEvents(newButton);
+			var newToDo = $("<p data-id='" + toDos + "'>").text(" " + toDo.toString() + " ").append(newButton).prepend(newCheckBox);
+			$(".comments").append(newToDo);
+			$(".add input").val("");
+			toDos++;*/
+		}
 	};
 
 	var editToDo = function(toDos) {
@@ -75,7 +87,7 @@ var main = function() {
 $(document).ready(main);
 
 
-function toDo(name, importance, deadline, done)
+function toDo(name, importance, deadline)
 {
 	this.name = name;
 	this.importance = importance;
