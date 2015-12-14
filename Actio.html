@@ -1,65 +1,28 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Actio! - Organise your tasks</title>
-        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
-    </head>
-    <body>
-        <header>
-            <h1>Actio!</h1>
-            <nav>
-                <a href="#">Register</a> |
-                <a href="#">Tutorial</a> |
-                <a href="#">Contact</a>
-            </nav>
-        </header>
-        
-        <main>
-            <ul id="listList">
-                <h3>LijstOverzicht</h3>
-                <li><a href>Lijst1</a></li>
-                <li><a href>Lijst2</a></li>
-                <li><a href>Lijst3</a></li>
-                <li><a href>Lijst4</a></li>
-            </ul>
+<head>
+    <title>Actio! - Organise your tasks</title>
+    <!--<link href="style.css" rel="stylesheet" type="text/css">-->
+</head>
+<body>
+<h3>Displaying To Do objects</h3>
+<section class="toDoList1">
+    <p>text1</p>
+    <section class="subToDoList1"></section>
+    <p>text2</p>
+    <section class="subToDoList2"></section>
+    <p>text3</p>
+</section>
 
-            <section class="add">
-                <p>Add a to do element:</p>
-                <input type="text" size="70"> <button>Add!</button>
-                </section>
+<h3>Displaying your own To Do objects</h3>
+<section class="toDoList2">
 
-            <section class="edit">
-                <p>Edit a to do element:</p>
-                <input type="text" size="70"> <button>Edit!</button>
-            </section>
+</section>
 
-            <section class="sort">
-                <p>
-                    <select>
-                        <option value="sortduedate">Sort items by due date</option>
-                        <option value="sortimportance">Sort items by importance</option>
-                    </select> 
-                    <button>Sort!</button>
-                </p>
-            </section>
 
-            <section class="comments">
-                <p data-id="1" contenteditable="true"><input type="checkbox" name="checkbox" id="box1"> 1e to-do <button id="1">X</button></p>
-                <p data-id="2"><input type="checkbox" name="checkbox" id="box2"> 2e to-do <button id="2">X</button></p>
-                <p data-id="3"><input type="checkbox" name="checkbox" id="box3"> 3e to-do <button id="3">X</button></p>
-                <p id="p"></p>
-            </section>
-        </main>
-
-        <footer>
-            <div class="contact">
-                <h5>Actio!<br>
-                Faculty of EEMCS,<br>
-                Delft University of Technology<br>
-                Mekelweg 4<br>
-                2628 CD Delft</h5>
-        </footer>
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-        <script src="Actio.js"></script>
-    </body>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="ActioObject.js"></script>
+<script src="ActioFunction.js"></script>
+<script src="Actio.js"></script>
+</body>
 </html>

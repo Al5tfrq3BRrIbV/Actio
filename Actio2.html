@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Actio! - Organise your tasks</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <!--<link href="style.css" rel="stylesheet" type="text/css">-->
     </head>
     <body>
         <header>
@@ -23,17 +23,32 @@
                 <li><a href>Lijst4</a></li>
             </ul>
 
-            <section dir=rtl class="comment-input">
-            <p>:Add a to do element</p>
-            <input dir=rtl type="text"><button>!Add</button>
+            <section class="add">
+                <p>Add a to do element:</p>
+                <input type="text" size="70"> <button>Add!</button>
             </section>
 
-            <section dir=rtl class="comments">
-                <p>1e comment</p>
-                <p>2e comment</p>
-                <p>3e comment</p>
-                <p>4e comment</p>
-                <p id="1"></p>
+            <section class="edit">
+                <p>Edit a to do element:</p>
+                <input type="text" size="70"> <button>Edit!</button>
+                <p id="editmessage"></p>
+            </section>
+
+            <section class="sort">
+                <p>
+                    <select>
+                        <option value="sortduedate">Sort items by due date</option>
+                        <option value="sortimportance">Sort items by importance</option>
+                    </select> 
+                    <button>Sort!</button>
+                </p>
+            </section>
+
+            <section class="comments">
+                <p data-id="1"><input type="checkbox" name="checkbox" id="box1"> 1e to-do <button id="1">X</button></p>
+                <p data-id="2"><input type="checkbox" name="checkbox" id="box2"> 2e to-do <button id="2">X</button></p>
+                <p data-id="3"><input type="checkbox" name="checkbox" id="box3"> 3e to-do <button id="3">X</button></p>
+                <p id="p"></p>
             </section>
         </main>
 
@@ -47,5 +62,6 @@
         </footer>
         <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
         <script src="Actio.js"></script>
+        <script src="ActioObject.js"></script>
     </body>
 </html>

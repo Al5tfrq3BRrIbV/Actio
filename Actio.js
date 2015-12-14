@@ -1,129 +1,15 @@
 var main = function() {
 	"use strict";
 
-	var toDos = 4;
+	var firstTodo = new ToDo("name1", "date1", false, false);
+	var secondTodo = new ToDo("name2", "date2", false, false);
+	var thirdTodo = new ToDo("name3", "date3", true, false);
 
-	var addToDo = function(toDos) {
-		var newCheckBox = $('<input type="checkbox">');
-		var newButton = $("<button>").text("X");
-		buttonEvents(newButton);
-		var newToDo = $("<p data-id='" + toDos + "'>").text(" " + $(".add input").val() + " ").append(newButton).prepend(newCheckBox);
-		$(".comments").append(newToDo);
-		$(".add input").val("");
-	};
+	displayToDo(firstTodo, ".toDoList1");
+	displayToDo(secondTodo, ".toDoList1 .subToDoList1");
+	displayToDo(thirdTodo, ".toDoList1 .subToDoList2");
 
-	var editToDo = function(toDos) {
-		/*var newCheckBox=$('<input type="checkbox">');
-		var newText=$(".edit input").val();
-		var i = 0;
-		while(i<toDos)
-		{
-			if(document.getElementById("box"+i).checked)
-			{
-				document.getElementById(i).innerHTML=newCheckBox + " " + newText;
-				$(".edit input").val("");
-			}
-			i++;
-		}*/
-		if($(".comments input").prop('checked'))
-		{
-			$(".comments input").parent().remove();
-			addToDo(toDos);
-		}
-	}
-
-	$(".add button").on("click", function (event) {
-		addToDo(toDos);
-	});
-
-	$(".add input").on("keypress", function (event) {
-		if(event.keyCode === 13) {
-			addToDo(toDos);
-		}
-	});
-
-	function buttonEvents(el){
-		$(el).click(function (event) {
-			$(this).parent().remove();
-		});
-	}
-
-	buttonEvents($(".comments button"));
-
-	$(".edit button").click(function (event) {
-		editToDo(toDos);
-	});
-
-	$(".edit input").on("keypress", function (event) {
-		if(event.keyCode === 13) {
-			editToDo(toDos);
-		}
-	});
 
 };
 
 $(document).ready(main);
-
-
-function toDo(name, importance, deadline, done)
-{
-	this.name = name;
-	this.importance = importance;
-	this.deadline = deadline;
-	this.done = false;
-
-	this.setName = function(n)
-	{
-		this.name = n;
-	};
-
-	this.setImportance = function(i)
-	{
-		this.importance = i;
-	};
-
-	this.setDeadline = function(d)
-	{
-		this.deadline = d;
-	};
-
-	this.setDone = function()
-	{
-		this.done = true;
-	};
-
-	this.getName = function()
-	{
-		return this.name;
-	};
-
-	this.getImportance = function()
-	{
-		return this.importance;
-	};
-
-	this.getDeadline = function()
-	{
-		return this.deadline;
-	};
-
-	this.getDone = function()
-	{
-		return this.done;
-	};
-
-	this.toString = function()
-	{
-		var string;
-		if(this.done === false)
-		{
-			string = "To do: ";
-		}
-		else
-		{
-			string = "Done: ";
-		}
-		string = string + this.name + "; Importance: " + this.importance + "; Deadline: " + this.deadline;
-	};
-}
-
