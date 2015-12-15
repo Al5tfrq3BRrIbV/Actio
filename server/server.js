@@ -1,21 +1,29 @@
 var express = require("express");
 var url = require("url");
 var http = require("http");
-var app;
+var mysql = require("mysql");
+var app = express();
 
-app = express();
-http.createServer(app).listen(1033);
+app.use(express.static(__dirname + "/code"));
 
-app.get("/", function(req,res) {
+var sqlconnection = mysql.createConnection(
+	{
+		host		: 'localhost',
+		user	 	: 'root',
+		password 	: 'password',
+		database	: 'TODOS'
+	}
+);
+
+http.createServer(app).listen(2683);
+
+app.get("/", function (req,res) {
 	res.send("What?");
 })
 
-app.get("/greetings", function (req, res) {
-	var query = url.parse(req.url, true).query;
-	var name = ( query["name"]!==undefined) ? query["name"] : "Anonymous";
-		res.send("Greetings "+name);
+app.get("/request/todos", function (req, res) {
+	sqlconnection.query('SELECT * FROM Todos', function (err, rows) {
+		if(err) console.log(err);
+		res.end(JSON.stringify(rows));
 	});
-
-app.get("/cheerio", function (req, res) {
-	res.send("Cheerio.");
 });
