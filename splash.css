@@ -1,0 +1,30 @@
+body{
+	background-color: red;
+	text-align:center;
+	font-family: Arial;
+}
+
+p.Actio{
+	font-size:300%;
+	border: 3px solid orange;
+	width:200px;
+	text-align:center;
+
+}
+
+button{
+	background:orange;
+	width:500px;
+	padding:20px;
+	text-align: center;
+	border: 1px solid black;
+	font-size:200%;
+}
+
+button:hover{
+	background:green;
+}
+
+button:active{
+	border: 3px solid white;
+}
