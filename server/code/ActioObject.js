@@ -11,7 +11,7 @@ function ToDoList(category) {
 	this.category = category;
 	this.list = [];
 	this.readToDoList = function(toDoList, dataIn) {
-		dataIn.forEach(function (toDoIn) {
+		dataIn.list.forEach(function (toDoIn) {
 			toDoList.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
 		});
 		console.log("Interpreting toDoList");

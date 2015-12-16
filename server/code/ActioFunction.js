@@ -18,7 +18,7 @@ function getToDoList(toDoList){
 }
 
 function displayToDoList(toDoList, locationSection){
-	toDoList.forEach(function(toDoIn){
+	toDoList.list.forEach(function(toDoIn){
 		displayToDo(toDoIn, locationSection)
 	});
 	console.log("Done displaying");
