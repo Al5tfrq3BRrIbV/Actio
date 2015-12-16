@@ -13,7 +13,7 @@ function buttonEvents(el){
 }
 
 function getToDoList(toDoList){
-	$.get("/request/todos", toDoList.read);
+	$.get("/request/todos", toDoList.readToDoList);
 	console.log("Getting toDoList from server.");
 }
 

@@ -10,9 +10,9 @@ function ToDo(id, text, priority, dueDate, done, user) {
 function ToDoList(category) {
 	this.category = category;
 	this.list = [];
-	this.readToDoList = function(toDoList, dataIn) {
-		dataIn.list.forEach(function (toDoIn) {
-			toDoList.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
+	this.readToDoList = function(dataIn) {
+		JSON.parse(dataIn).list.forEach(function (toDoIn) {
+			this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
 		});
 		console.log("Interpreting toDoList");
 	}
