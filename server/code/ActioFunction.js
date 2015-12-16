@@ -15,7 +15,7 @@ function buttonEvents(el){
 function getToDoList(toDoList, callback){
 	$.get("/request/todos", $.proxy(toDoList.readToDoList, toDoList));
 	console.log("Getting toDoList from server.");
-    callback(toDoList1, ".toDoList1");
+    callback(toDoList, ".toDoList1");
 }
 
 function displayToDoList(toDoList, locationSection){
