@@ -17,6 +17,6 @@ function ToDoList(category) {
 			this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
 		}), this.a);
 		console.log("Interpreting toDoList");
-		this.b(this.list, ".toDoList1");
+		this.b(this.a.list, ".toDoList1");
 	}
 }
