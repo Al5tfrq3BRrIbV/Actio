@@ -1,6 +1,8 @@
 var main = function() {
 	"use strict";
 
+	console.log("logging1");
+	
 	var firstTodo = new ToDo("name1", "date1", false, false);
 	var secondTodo = new ToDo("name2", "date2", false, false);
 	var thirdTodo = new ToDo("name3", "date3", true, false);

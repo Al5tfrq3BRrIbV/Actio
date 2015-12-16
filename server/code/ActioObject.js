@@ -1,5 +1,4 @@
 function ToDo(id, text, priority, dueDate, done, user) {
-
 	this.id = id;
 	this.text = text;
 	this.priority = priority;
