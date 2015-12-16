@@ -14,12 +14,10 @@ function buttonEvents(el){
 
 function getToDoList(toDoList){
 	$.get("/request/todos", $.proxy(toDoList.readToDoList, {a: toDoList, b: displayToDoList}));
-	console.log("Getting toDoList from server.");
 }
 
 function displayToDoList(toDoList, locationSection){
 	toDoList.list.forEach(function(toDoIn){
 		displayToDo(toDoIn, locationSection)
 	});
-	console.log("Done displaying");
 }
