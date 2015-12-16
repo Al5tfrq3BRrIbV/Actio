@@ -30,7 +30,6 @@ var main = function() {
 			var newToDo = $("<p data-id='" + toDos + "'>").text(" " + $(".add input").val() + " ").append(newButton).prepend(newCheckBox);
 			$(".comments").append(newToDo);
 			$(".add input").val("");
-			toDos++;
 		}
 	};
 
@@ -75,6 +74,6 @@ var main = function() {
 
 	function cleanup(){
 		document.getElementById("editmessage").innerHTML="";
-	};
+	}
 
 $(document).ready(main);

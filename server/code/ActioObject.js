@@ -5,8 +5,7 @@ function ToDo(id, text, priority, dueDate, done, user) {
 	this.dueDate = dueDate;
 	this.done = done;
 	this.user = user;
-
-};
+}
 
 function ToDoList(category) {
 	this.category = category;
