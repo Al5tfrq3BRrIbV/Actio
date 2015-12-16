@@ -13,7 +13,7 @@ function ToDoList(category) {
 	this.readToDoList = function(dataIn, parent) {
 		console.log(JSON.parse(dataIn));
 		JSON.parse(dataIn).forEach(function (toDoIn) {
-			console.log(this);
+			console.log(parent);
 			parent.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
 		});
 		console.log("Interpreting toDoList");
