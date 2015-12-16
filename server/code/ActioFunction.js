@@ -12,10 +12,9 @@ function buttonEvents(el){
     });
 }
 
-function getToDoList(toDoList, callback){
-	$.get("/request/todos", $.proxy(toDoList.readToDoList, toDoList));
+function getToDoList(toDoList){
+	$.get("/request/todos", $.proxy(toDoList.readToDoList, toDoList, displayToDoList));
 	console.log("Getting toDoList from server.");
-    callback(toDoList, ".toDoList1");
 }
 
 function displayToDoList(toDoList, locationSection){
