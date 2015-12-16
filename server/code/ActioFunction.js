@@ -2,7 +2,7 @@ var displayToDo = function (toDo, locationSection){
     var newCheckBox = $('<input type="checkbox">');
     var newButton = $("<button>").text("X");
     buttonEvents(newButton);
-    var newToDo = $("<p>").text(toDo.name + " " + toDo.dueDate).append(newButton).prepend(newCheckBox);
+    var newToDo = $("<p>").text(toDo.text + " " + toDo.dueDate).append(newButton).prepend(newCheckBox);
     $(locationSection).append(newToDo);
 };
 
@@ -21,7 +21,7 @@ function getToDoList(){
 
 function readToDoList(toDoList, dataIn) {
 	dataIn.forEach(function (toDoIn) {
-		toDoList.list.push(new ToDo(toDoIn.text, toDoIn.dueDate, toDoIn.priority, toDoIn.done, toDoIn.id));
+		toDoList.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
 	});
 	console.log("Interpreting toDoList");
 }
