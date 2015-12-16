@@ -13,7 +13,7 @@ var main = function() {
 	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(secondTodo);
 
-	readToDoList(toDoList1, getToDoList());
+	getToDoList();
 
 	displayToDoList(toDoList1, ".toDoList1");
 		

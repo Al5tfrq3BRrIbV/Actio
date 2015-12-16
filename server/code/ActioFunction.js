@@ -17,13 +17,6 @@ function getToDoList(toDoList){
 	console.log("Getting toDoList from server.");
 }
 
-function readToDoList(toDoList, dataIn) {
-	dataIn.forEach(function (toDoIn) {
-		toDoList.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
-	});
-	console.log("Interpreting toDoList");
-}
-
 function displayToDoList(toDoList, locationSection){
 	toDoList.forEach(function(toDoIn){
 		displayToDo(toDoIn, locationSection)
