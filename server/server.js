@@ -10,8 +10,8 @@ var sqlconnection = mysql.createConnection(
 	{
 		host		: 'localhost',
 		user	 	: 'root',
-		password 	: 'password',
-		database	: 'TODOS'
+		password 	: '',
+		database	: 'ACTIO'
 	}
 );
 
