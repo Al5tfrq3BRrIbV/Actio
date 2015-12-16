@@ -12,10 +12,8 @@ function buttonEvents(el){
     });
 }
 
-function getToDoList(){
-	$.get("/request/todos", function(jsonInput) {
-		return JSON.parse(jsonInput);
-	});
+function getToDoList(toDoList){
+	$.get("/request/todos", toDoList.read);
 	console.log("Getting toDoList from server.");
 }
 
