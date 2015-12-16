@@ -1,12 +1,11 @@
-function ToDo(name, dueDate, importance, done, id) {
-
-	this.name = name;
-	this.dueDate = dueDate;
-	this.importance = importance;
-	this.done = done;
+function ToDo(id, text, priority, dueDate, done, user) {
 	this.id = id;
-
-};
+	this.text = text;
+	this.priority = priority;
+	this.dueDate = dueDate;
+	this.done = done;
+	this.user = user;
+}
 
 function ToDoList(category) {
 	this.category = category;

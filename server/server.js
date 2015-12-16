@@ -10,16 +10,14 @@ var sqlconnection = mysql.createConnection(
 	{
 		host		: 'localhost',
 		user	 	: 'root',
-		password 	: 'password',
-		database	: 'TODOS'
+		database	: 'ACTIO'
 	}
 );
 
-http.createServer(app).listen(2683);
-
 app.get("/", function (req,res) {
 	res.send("What?");
-})
+});
+
 
 app.get("/request/todos", function (req, res) {
 	sqlconnection.query('SELECT * FROM Todos', function (err, rows) {
@@ -27,3 +25,7 @@ app.get("/request/todos", function (req, res) {
 		res.end(JSON.stringify(rows));
 	});
 });
+
+http.createServer(app).listen(8090, '0.0.0.0');
+
+console.log("Now running on port 8090.");
