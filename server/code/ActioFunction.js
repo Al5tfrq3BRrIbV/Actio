@@ -30,4 +30,5 @@ function displayToDoList = function (toDoList, locationSection){
 	toDoList.forEach(function(toDoIn){
 		displayToDo(toDoIn, locationSection);
 	});
+	console.log("Done displaying");
 };
