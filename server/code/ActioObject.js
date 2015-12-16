@@ -10,12 +10,11 @@ function ToDo(id, text, priority, dueDate, done, user) {
 function ToDoList(category) {
 	this.category = category;
 	this.list = [];
-	this.readToDoList = function(dataIn, parent) {
+	this.readToDoList = function(dataIn) {
 		console.log(JSON.parse(dataIn));
-		JSON.parse(dataIn).forEach(function (toDoIn) {
-			console.log(parent);
-			parent.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
-		});
+		JSON.parse(dataIn).forEach( $.proxy( function (toDoIn) {
+			this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
+		}), this );
 		console.log("Interpreting toDoList");
 	}
 }
