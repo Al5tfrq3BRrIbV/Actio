@@ -10,13 +10,13 @@ function ToDo(id, text, priority, dueDate, done, user) {
 function ToDoList(category) {
 	this.category = category;
 	this.list = [];
-	this.readToDoList = function(dataIn, callback) {
+	this.readToDoList = function(dataIn) {
 		console.log(dataIn);
 		console.log(JSON.parse(dataIn));
 		JSON.parse(dataIn).forEach( $.proxy( function (toDoIn) {
-			this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
-		}), this);
+			this.a.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
+		}), this.a);
 		console.log("Interpreting toDoList");
-		callback(this.list, ".toDoList1");
+		this.b(this.list, ".toDoList1");
 	}
 }
