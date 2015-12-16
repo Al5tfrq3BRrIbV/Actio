@@ -3,9 +3,9 @@ var main = function() {
 
 	console.log("logging1");
 	
-	var firstTodo = new ToDo("name1", "date1", false, false);
-	var secondTodo = new ToDo("name2", "date2", false, false);
-	var thirdTodo = new ToDo("name3", "date3", true, false);
+	var firstTodo = new ToDo("4", "name1", 0, "date1", false, "user1");
+	var secondTodo = new ToDo("5", "name2", 0, "date1", false, "user1");
+	var thirdTodo = new ToDo("6", "name3", 0, "date1", false, "user1");
 
 	displayToDo(firstTodo, ".toDoList1");
 	displayToDo(secondTodo, ".toDoList1 .subToDoList1");
