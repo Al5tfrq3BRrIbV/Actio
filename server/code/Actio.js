@@ -13,13 +13,14 @@ var main = function() {
 	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(secondTodo);
 
-	console.log(getToDoList());
+	console.log(toDoList1);
 
 	readToDoList(toDoList1, getToDoList());
 
 	displayToDoList(toDoList1, ".toDoList1");
 		
 };
+
 var addToDo = function(toDos) {
 	if($(".add input").val() !==""){
 		cleanup();
