@@ -12,7 +12,7 @@ function buttonEvents(el){
     });
 }
 
-function getToDoList(toDoList, location){
+function getToDoList(toDoList){
 	$.get("/todo/request", $.proxy(toDoList.readToDoList, toDoList));
 }
 
