@@ -53,8 +53,8 @@ function deleteToDoById(id){
 }
 
 function getAndDisplay(toDoList, location) {
-    function callBack(){
+    function callBack(toDoList, location){
         displayToDoList(toDoList, location)
     }
-    getToDoList(toDoList);
+    getToDoList(toDoList, callBack(toDoList, location));
 }
