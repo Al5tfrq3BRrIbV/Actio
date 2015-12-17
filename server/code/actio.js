@@ -16,7 +16,7 @@ var main = function() {
 	getToDoList(toDoList1, ".toDoList1");
 
 
-	console.log(toDoList1.checkExists('8'));
+	console.log(toDoList1.checkExists(firstTodo1.id));
 };
 
 var addToDo = function(toDos) {
