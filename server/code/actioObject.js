@@ -21,7 +21,7 @@ function ToDoList(category) {
 	this.checkExists = function(id) {
 		console.log(this);
 		for(i=0;i<this.list.length;i++){
-			if(id === this.list[i]) return true;
+			if(id === this.list[i].id) return true;
 		}
 		return false;
 	}
