@@ -8,10 +8,9 @@ body{
 	border: 3px solid yellow;
 	width:200px;
 	text-align:center;
+	margin:auto;
 	margin-bottom:50px;
 	padding:20px;
-	position:relative;
-	left:650px;
 }
 
 nav{
@@ -49,13 +48,25 @@ nav p{
 	margin:5px;
 }
 
-.todos p::after{
+.todos p[data-priority]::after{
 	position:absolute;
 	left:560px;
-	content: "deadline: " attr(data-due) ", priority: " attr(data-priority);
 	border:1px solid black;
 	width:400px;
-	text-align:center;
+	text-align:left;
+	padding-left:3px;
+}
+
+.todos p[data-priority="1"]::after{
+	content: "deadline: " attr(data-due) ", priority: " "\2605";
+}
+
+.todos p[data-priority="2"]::after{
+	content: "deadline: " attr(data-due) ", priority: " "\2605" "\2605";
+}
+
+.todos p[data-priority="3"]::after{
+	content: "deadline: " attr(data-due) ", priority: " "\2605" "\2605" "\2605";
 }
 
 .todo::before{
