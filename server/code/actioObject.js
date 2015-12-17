@@ -12,13 +12,12 @@ function ToDoList(category) {
 	this.category = category;
 	this.list = [];
 	this.readToDoList = function(dataIn) {
-		$.proxy(
-		JSON.parse(dataIn).forEach( function (toDoIn) {
+		JSON.parse(dataIn).forEach( $.proxy(function (toDoIn) {
 			console.log(this);
 			if(!this.checkExists(toDoIn.id)) {
 				this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user, toDoIn.category));
 			}
-		}), this);
+		}, this))
 	}
 	this.checkExists = function(id) {
 		for(i=0;i<this.list.length;i++){
