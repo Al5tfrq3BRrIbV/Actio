@@ -15,10 +15,8 @@ var main = function() {
 
 	getToDoList(toDoList1, ".toDoList1");
 
-	setInterval(function() {
-		getToDoList(toDoList1, ".toDoList1");
-	}, 2000);
-		
+
+	console.log(toDoList1.checkExists(firstTodo.id));
 };
 
 var addToDo = function(toDos) {
