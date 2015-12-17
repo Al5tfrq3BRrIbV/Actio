@@ -18,12 +18,11 @@ function ToDoList(category) {
 		}), this.toDoList);
 		this.display(this.toDoList, this.location);
 	}
-	this.checkExists = function(id) {
-		this.list.forEach( function () {
-			console.log(this);
+	this.checkExists = $.proxy(function(id) {
+		this.list.forEach($.proxy(function () {
 			if(id === this.id) return false;
-		}
+		}, this)
 		);
 		return true;
-	}
+	}, this);
 }
