@@ -21,3 +21,10 @@ function displayToDoList(toDoList, locationSection){
 		displayToDo(toDoIn, locationSection)
 	});
 }
+
+function uploadToDo(toDo){
+    var objectAsUrl = "?id=" + toDo.id + "&text=" toDo.text
+        + "&priority=" + this.priority + "&dueDate=" +this.dueDate
+        + "&done=" + this.done + "&user=" + this.user
+    $.get("/add/todo" + objectAsUrl, console.log());
+}
