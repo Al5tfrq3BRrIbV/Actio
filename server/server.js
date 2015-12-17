@@ -18,15 +18,27 @@ app.get("/", function (req, res) {
     res.send("What?");
 });
 
-
-app.get("/request/todo", function (req, res) {
+app.get("/todo/request", function (req, res) {
     sqlconnection.query('SELECT * FROM Todos', function (err, rows) {
         if (err) console.log(err);
         res.end(JSON.stringify(rows));
     });
 });
 
-app.get("/add/todo", function (req, res) {
+app.get("/todo/request/category", function (req, res) {
+    var query = url.parse(req.url, true).query;
+    if(query.category !== undefined) {
+        sqlconnection.query("SELECT * FROM Todos WHERE category='" + query.category + "';", function (err, rows) {
+            if (err) console.log(err);
+            res.end(JSON.stringify(rows));
+        });
+    }
+    else {
+        res.end("Error: missing message parameter");
+    }
+});
+
+app.get("/todo/add", function (req, res) {
     var query = url.parse(req.url, true).query;
 
     if(query.id !== undefined){
@@ -39,7 +51,7 @@ app.get("/add/todo", function (req, res) {
     }
 });
 
-app.get("/update/todo", function (req, res) {
+app.get("/todo/update", function (req, res) {
     var query = url.parse(req.url, true).query;
 
     if(query.id !== undefined){
@@ -53,7 +65,7 @@ app.get("/update/todo", function (req, res) {
     }
 });
 
-app.get("/delete/todo", function (req, res) {
+app.get("/todo/delete", function (req, res) {
     var query = url.parse(req.url, true).query;
 
     if(query.id !== undefined){
@@ -62,7 +74,7 @@ app.get("/delete/todo", function (req, res) {
     else {
         res.end("Error: missing message parameter");
     }
-})
+});
 
 http.createServer(app).listen(8090, '0.0.0.0');
 

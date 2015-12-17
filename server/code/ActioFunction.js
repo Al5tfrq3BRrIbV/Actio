@@ -13,7 +13,17 @@ function buttonEvents(el){
 }
 
 function getToDoList(toDoList, location){
-	$.get("/request/todo", $.proxy(toDoList.readToDoList,
+	$.get("/todo/request", $.proxy(toDoList.readToDoList,
+        {toDoList: toDoList, display: displayToDoList, location: location}));
+}
+
+function getToDoListByCategory(toDoList, location, category){
+    $.get("/todo/request/category" + "?category=" + category, $.proxy(toDoList.readToDoList,
+        {toDoList: toDoList, display: displayToDoList, location: location}));
+}
+
+function getToDoListByUser(toDoList, location, user){
+    $.get("/todo/request/category" + "?user=" + user, $.proxy(toDoList.readToDoList,
         {toDoList: toDoList, display: displayToDoList, location: location}));
 }
 
@@ -27,20 +37,20 @@ function uploadToDo(toDo){
     var objectAsUrl = "?id=" + toDo.id + "&text=" +toDo.text
         + "&priority=" + toDo.priority + "&dueDate=" + toDo.dueDate
         + "&done=" + toDo.done + "&user=" + toDo.user + "&category=" + toDo.category;
-    $.get("/add/todo" + objectAsUrl, console.log());
+    $.get("/todo/add" + objectAsUrl, console.log());
 }
 
 function updateToDo(toDo){
     var objectAsUrl = "?id=" + toDo.id + "&text=" +toDo.text
         + "&priority=" + toDo.priority + "&dueDate=" + toDo.dueDate
         + "&done=" + toDo.done + "&user=" + toDo.user + "&category=" + toDo.category;
-    $.get("/update/todo" + objectAsUrl, console.log());
+    $.get("/todo/update" + objectAsUrl, console.log());
 }
 
 function deleteToDo(toDo){
-    $.get("/delete/todo" + "?id=" + toDo.id, console.log());
+    $.get("/todo/delete" + "?id=" + toDo.id, console.log());
 }
 
 function deleteToDoById(id){
-    $.get("/delete/todo" + "?id=" + id, console.log());
+    $.get("/todo/delete" + "?id=" + id, console.log());
 }
