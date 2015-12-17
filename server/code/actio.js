@@ -17,7 +17,7 @@ var main = function() {
 
 	setInterval(function() {
 		getToDoList(toDoList1, ".toDoList1");
-	});
+	}, 2000);
 		
 };
 
