@@ -14,9 +14,7 @@ var main = function() {
 	toDoList1.list.push(secondTodo);
 
 	getToDoList(toDoList1, ".toDoList1");
-	toDoList1.list.push(firstTodo);
-
-	console.log(toDoList1.checkExists(16));
+	getToDoList(toDoList1, ".toDoList1");
 };
 
 var addToDo = function(toDos) {
