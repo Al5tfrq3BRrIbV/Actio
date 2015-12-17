@@ -18,11 +18,10 @@ function ToDoList(category) {
 		}), this.toDoList);
 		this.display(this.toDoList, this.location);
 	}
-	this.checkExists = $.proxy(function(id) {
-		console.log(this);
+	this.checkExists = function(id) {
 		for(i=0;i<this.list.length;i++){
-			if(this.list[i] === id) return true;
+			if(id === this.list[i]) return true;
 		}
 		return false;
-	}, this);
+	}
 }
