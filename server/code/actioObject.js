@@ -20,6 +20,7 @@ function ToDoList(category) {
 	}
 	this.checkExists = function(id) {
 		this.list.forEach( function () {
+			console.log(this);
 			if(id === this.id) return false;
 		}
 		);
