@@ -16,7 +16,7 @@ var main = function() {
 	getToDoList(toDoList1, ".toDoList1");
 	toDoList1.list.push(firstTodo);
 
-	console.log(toDoList1.checkExists(firstTodo.id));
+	console.log(toDoList1.checkExists(16));
 };
 
 var addToDo = function(toDos) {
