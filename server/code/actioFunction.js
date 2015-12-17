@@ -56,5 +56,5 @@ function getAndDisplay(toDoList, location) {
     function callBack(toDoList, location){
         displayToDoList(toDoList, location)
     }
-    getToDoList(toDoList, callBack(toDoList, location));
+    getToDoList(toDoList, callBack);
 }
