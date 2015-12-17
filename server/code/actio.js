@@ -23,7 +23,7 @@ var addToDo = function(toDos) {
 		var newCheckBox = $('<input type="checkbox">');
 		var newButton = $("<button>").text("X");
 		buttonEvents(newButton);
-		var newToDo = $("<p data-id='" + toDos + "'>").text(" " + $(".add input").val() + " ").append(newButton).prepend(newCheckBox);
+		var newToDo = $("<p>").text(" " + $(".add input").val() + " ").append(newButton).prepend(newCheckBox);
 		$(".comments").append(newToDo);
 		$(".add input").val("");
 	}
