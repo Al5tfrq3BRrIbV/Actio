@@ -29,3 +29,10 @@ function uploadToDo(toDo){
         + "&done=" + toDo.done + "&user=" + toDo.user + "&category=" + toDo.category;
     $.get("/add/todo" + objectAsUrl, console.log());
 }
+
+function updateToDo(toDo){
+    var objectAsUrl = "?id=" + toDo.id + "&text=" +toDo.text
+        + "&priority=" + toDo.priority + "&dueDate=" + toDo.dueDate
+        + "&done=" + toDo.done + "&user=" + toDo.user + "&category=" + toDo.category;
+    $.get("/update/todo" + objectAsUrl, console.log());
+}

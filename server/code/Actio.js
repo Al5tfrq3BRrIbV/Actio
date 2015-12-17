@@ -15,7 +15,9 @@ var main = function() {
 
 	getToDoList(toDoList1, ".toDoList1");
 
-	uploadToDo(firstTodo);
+	uploadToDo(secondTodo);
+
+	updateToDo(secondTodo);
 		
 };
 

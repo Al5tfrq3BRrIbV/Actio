@@ -39,6 +39,20 @@ app.get("/add/todo", function (req, res) {
     }
 });
 
+app.get("/update/todo", function (req, res) {
+    var query = url.parse(req.url, true).query;
+
+    if(query.text !== undefined){
+        console.log("UPDATE Todos SET "
+            + "text='" + query.text + "', priority='" + query.priority + "', date='" + query.dueDate + "', done='"
+            + query.done + "', user='" + query.user + "', category='" + query.category
+            + "' WHERE " + "id='" query.id + "';");
+    }
+    else {
+        res.end("Error: missing message parameter");
+    }
+})
+
 http.createServer(app).listen(8090, '0.0.0.0');
 
 console.log("Now running on port 8090.");
