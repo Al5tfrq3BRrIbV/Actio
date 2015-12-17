@@ -21,7 +21,7 @@ function ToDoList(category) {
 	this.checkExists = $.proxy(function(id) {
 		console.log(this);
 		for(i=0;i<this.list.length;i++){
-			if(this.list[i] === id) return true;
+			if(this.list.indexOf(i).id === id) return true;
 		}
 		return false;
 	}, this);
