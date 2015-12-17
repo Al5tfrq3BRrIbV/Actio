@@ -13,7 +13,7 @@ function buttonEvents(el){
 }
 
 function getToDoList(toDoList, location){
-	$.get("/request/todos", $.proxy(toDoList.readToDoList, {toDoList: toDoList, display: displayToDoList, location: location}));
+	$.get("/request/todo", $.proxy(toDoList.readToDoList, {toDoList: toDoList, display: displayToDoList, location: location}));
 }
 
 function displayToDoList(toDoList, locationSection){
