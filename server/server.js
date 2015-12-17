@@ -34,7 +34,7 @@ app.get("/add/todo", function (req, res) {
 
     console.log("INSERT INTO Todos VALUES ('" + query.id + "', '"
         + query.text + "', '" + query.priority + "', '" + query.dueDate
-        + "', '" + query.done + "', '" + query.user + "');");
+        + "', '" + query.done + "', '" + query.user + "', '" + query.category + "');");
 
     if (query["message"] !== undefined) {
         var tx = {
