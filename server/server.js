@@ -29,8 +29,7 @@ app.get("/request/todo", function (req, res) {
 app.get("/add/todo", function(req, res) {
 	var urlParts = url.parse(req.url, true);
 	var query = urlParts.query;
-
-	console.log(urlParts);
+	
 	console.log(query);
 	if(query["message"] !== undefined) {
 		var tx = { message : query["message"],
