@@ -13,7 +13,6 @@ function ToDoList(category) {
 	this.list = [];
 	this.readToDoList = function(dataIn) {
 		JSON.parse(dataIn).forEach( $.proxy(function (toDoIn) {
-			console.log(this);
 			if(!this.checkExists(toDoIn.id)) {
 				this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user, toDoIn.category));
 			}

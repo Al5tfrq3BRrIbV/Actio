@@ -17,13 +17,11 @@ function getToDoList(toDoList){
 }
 
 function getToDoListByCategory(toDoList, location, category){
-    $.get("/todo/request/category" + "?category=" + category, $.proxy(toDoList.readToDoList,
-        {toDoList: toDoList, display: displayToDoList, location: location}));
+    $.get("/todo/request/category" + "?category=" + category, $.proxy(toDoList.readToDoList, toDoList));
 }
 
 function getToDoListByUser(toDoList, location, user){
-    $.get("/todo/request/category" + "?user=" + user, $.proxy(toDoList.readToDoList,
-        {toDoList: toDoList, display: displayToDoList, location: location}));
+    $.get("/todo/request/category" + "?user=" + user, $.proxy(toDoList.readToDoList, toDoList));
 }
 
 function displayToDoList(toDoList, locationSection){
@@ -53,3 +51,7 @@ function deleteToDo(toDo){
 function deleteToDoById(id){
     $.get("/todo/delete" + "?id=" + id, console.log());
 }
+
+function getAndDisplay(toDoList, location, function(toDoList) {
+    displayToDoList(toDoList, location);
+})
