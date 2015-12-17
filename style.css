@@ -6,6 +6,7 @@ body{
 .Actio{
 	font-size:300%;
 	border: 3px solid yellow;
+	border-radius:25px;
 	width:200px;
 	text-align:center;
 	margin:auto;
@@ -77,6 +78,31 @@ nav p{
 .done::before{
 	content: "\2714" " ";
 	color:green;
+}
+
+.overdue{
+	color:yellow;
+}
+
+button{
+	margin-left:800px;
+	height:30px;
+	width:30px;
+	background-color:white;
+	border:3px solid black;
+	font-size:60%;
+	font-weight:bold;
+	padding:0px;
+}
+
+button:hover{
+	background-color:green;
+}
+
+button:active{
+	background-color:black;
+	color:green;
+	border:2px solid gray;
 }
 
 @keyframes todosani{
