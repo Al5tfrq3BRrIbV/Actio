@@ -43,10 +43,21 @@ app.get("/update/todo", function (req, res) {
     var query = url.parse(req.url, true).query;
 
     if(query.text !== undefined){
-        console.log("UPDATE Todos SET "
+        sqlconnection.query("UPDATE Todos SET "
             + "text='" + query.text + "', priority='" + query.priority + "', date='" + query.dueDate + "', done='"
             + query.done + "', user='" + query.user + "', category='" + query.category
             + "' WHERE " + "id='" + query.id + "';");
+    }
+    else {
+        res.end("Error: missing message parameter");
+    }
+});
+
+app.get("/delete/todo", function (req, res) {
+    var query = url.parse(req.url, true).query;
+
+    if(query.id !== undefined){
+        sqlconnection.query("DELETE FROM Todos WHERE id='" + query.id + "';");
     }
     else {
         res.end("Error: missing message parameter");

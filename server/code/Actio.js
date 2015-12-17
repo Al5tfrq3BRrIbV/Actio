@@ -17,7 +17,7 @@ var main = function() {
 
 	uploadToDo(secondTodo);
 
-	updateToDo(secondTodo);
+	deleteToDo(thirdTodo);
 		
 };
 

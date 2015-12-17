@@ -36,3 +36,7 @@ function updateToDo(toDo){
         + "&done=" + toDo.done + "&user=" + toDo.user + "&category=" + toDo.category;
     $.get("/update/todo" + objectAsUrl, console.log());
 }
+
+function deleteToDo(toDo){
+    $.get("/delete/todo" + "?id=" + toDo.id, console.log());
+}
