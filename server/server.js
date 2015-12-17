@@ -27,24 +27,12 @@ app.get("/request/todo", function (req, res) {
 });
 
 app.get("/add/todo", function (req, res) {
-    var urlParts = url.parse(req.url, true);
-    var query = urlParts.query;
+    var query = url.parse(req.url, true).urlParts.query;
 
-    console.log(query);
-
-    console.log("INSERT INTO Todos VALUES ('" + query.id + "', '"
-        + query.text + "', '" + query.priority + "', '" + query.dueDate
-        + "', '" + query.done + "', '" + query.user + "', '" + query.category + "');");
-
-    if (query["message"] !== undefined) {
-        var tx = {
-            message: query["message"],
-            type: query["type"],
-            deadline: query["deadline"]
-        };
-        todos.push(tx);
-        console.log("Added " + tx.message);
-        sqlconnection.query('INSERT INTO Todos ')
+    if(query.text !== undefined) {
+        sqlconnection.query("INSERT INTO Todos VALUES ('" + query.id + "', '"
+            + query.text + "', '" + query.priority + "', '" + query.dueDate
+            + "', '" + query.done + "', '" + query.user + "', '" + query.category + "');")
     }
     else {
         res.end("Error: missing message parameter");
