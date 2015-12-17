@@ -19,6 +19,7 @@ function ToDoList(category) {
 		this.display(this.toDoList, this.location);
 	}
 	this.checkExists = function(id) {
+		console.log(this);
 		for(i=0;i<this.list.length;i++){
 			if(id === this.list[i]) return true;
 		}
