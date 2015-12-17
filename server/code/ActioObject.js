@@ -13,8 +13,7 @@ function ToDoList(category) {
 	this.readToDoList = function(dataIn) {
 		JSON.parse(dataIn).forEach( $.proxy( function (toDoIn) {
 			this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user));
-		}), this.a);
-		console.log("Interpreting toDoList");
-		this.b(this.a, ".toDoList1");
+		}), this.toDoList);
+		this.display(this.toDoList, this.location);
 	}
 }

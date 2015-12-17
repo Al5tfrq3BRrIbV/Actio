@@ -12,12 +12,17 @@ function buttonEvents(el){
     });
 }
 
-function getToDoList(toDoList){
-	$.get("/request/todos", $.proxy(toDoList.readToDoList, {a: toDoList, b: displayToDoList}));
+function getToDoList(toDoList, location){
+	$.get("/request/todo", $.proxy(toDoList.readToDoList, {toDoList: toDoList, display: displayToDoList, location: location}));
 }
 
 function displayToDoList(toDoList, locationSection){
 	toDoList.list.forEach(function(toDoIn){
 		displayToDo(toDoIn, locationSection)
 	});
+}
+
+function uploadToDo(toDo){
+    var objectAsUrl = "?id=" + toDo.id + "&text=" +toDo.text + "&priority=" + toDo.priority + "&dueDate=" + toDo.dueDate + "&done=" + toDo.done + "&user=" + toDo.user;
+    $.get("/add/todo" + objectAsUrl, console.log());
 }

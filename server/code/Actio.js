@@ -1,9 +1,9 @@
 var main = function() {
 	"use strict";
 	
-	var firstTodo = new ToDo("4", "name1", 0, "date1", false, "user1");
-	var secondTodo = new ToDo("5", "name2", 0, "date1", false, "user1");
-	var thirdTodo = new ToDo("6", "name3", 0, "date1", false, "user1");
+	var firstTodo = new ToDo("4", "name1", 0, "date1", 0, "user1");
+	var secondTodo = new ToDo("5", "name2", 0, "date1", 0, "user1");
+	var thirdTodo = new ToDo("6", "name3", 0, "date1", 0, "user1");
 
 	displayToDo(firstTodo, ".toDoList1");
 	displayToDo(secondTodo, ".toDoList1 .subToDoList1");
@@ -13,7 +13,9 @@ var main = function() {
 	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(secondTodo);
 
-	getToDoList(toDoList1);
+	getToDoList(toDoList1, ".toDoList1");
+
+	uploadToDo(firstTodo);
 		
 };
 
