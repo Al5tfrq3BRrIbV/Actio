@@ -4,7 +4,7 @@ body{
 	font-family: Arial;
 }
 
-p.Actio{
+.Actio{
 	font-size:300%;
 	border: 3px solid yellow;
 	width:200px;
@@ -31,6 +31,19 @@ p.Actio{
 }
 
 @-webkit-keyframes Actio{
+	from{
+		left:10px;
+	}
+	50%{
+		border: 3px solid black;
+		padding:50px;
+	}
+	to{
+		left:650px;
+	}
+}
+
+@-moz-keyframes Actio{
 	from{
 		left:10px;
 	}
