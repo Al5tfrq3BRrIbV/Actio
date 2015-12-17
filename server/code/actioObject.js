@@ -20,11 +20,9 @@ function ToDoList(category) {
 	}
 	this.checkExists = $.proxy(function(id) {
 		console.log(this);
-		this.list.forEach($.proxy(function () {
-			console.log(this);
-			if(id === this.id) return false;
-		}, this)
-		);
-		return true;
+		for(i=0;i<this.list.length;i++){
+			if(this.list[i] === id) return true;
+		}
+		return false;
 	}, this);
 }
