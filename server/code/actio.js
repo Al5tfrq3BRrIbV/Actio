@@ -15,7 +15,7 @@ var main = function() {
 
 	getToDoList(toDoList1);
 
-	getAndDisplay(".toDoList1");
+	getAndDisplay(toDoList1, ".toDoList1");
 };
 
 var addToDo = function(toDos) {
