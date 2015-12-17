@@ -23,6 +23,6 @@ function displayToDoList(toDoList, locationSection){
 }
 
 function uploadToDo(toDo){
-    var objectAsUrl = "?id=" + toDo.id + "&text=" +toDo.text + "&priority=" + this.priority.toString() + "&dueDate=" +this.dueDate + "&done=" + this.done.toString() + "&user=" + this.user;
+    var objectAsUrl = "?id=" + toDo.id + "&text=" +toDo.text + "&priority=" + toDo.priority + "&dueDate=" + toDo.dueDate + "&done=" + toDo.done + "&user=" + toDo.user;
     $.get("/add/todo" + objectAsUrl, console.log());
 }
