@@ -40,3 +40,7 @@ function updateToDo(toDo){
 function deleteToDo(toDo){
     $.get("/delete/todo" + "?id=" + toDo.id, console.log());
 }
+
+function getToDo(id){
+    $.get("")
+}
