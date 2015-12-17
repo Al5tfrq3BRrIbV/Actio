@@ -46,7 +46,7 @@ app.get("/update/todo", function (req, res) {
         console.log("UPDATE Todos SET "
             + "text='" + query.text + "', priority='" + query.priority + "', date='" + query.dueDate + "', done='"
             + query.done + "', user='" + query.user + "', category='" + query.category
-            + "' WHERE " + "id='" query.id + "';");
+            + "' WHERE " + "id='" + query.id + "';");
     }
     else {
         res.end("Error: missing message parameter");
