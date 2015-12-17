@@ -19,7 +19,9 @@ function ToDoList(category) {
 		this.display(this.toDoList, this.location);
 	}
 	this.checkExists = $.proxy(function(id) {
+		console.log(this);
 		this.list.forEach($.proxy(function () {
+			console.log(this);
 			if(id === this.id) return false;
 		}, this)
 		);
