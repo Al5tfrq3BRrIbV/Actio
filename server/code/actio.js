@@ -14,13 +14,7 @@ var main = function() {
 	toDoList1.list.push(secondTodo);
 
 	getToDoList(toDoList1);
-
-	function getAndDisplay(location) {
-		function callBack(){
-			displayToDoList(toDoList1, location)
-		}
-		getToDoList(toDoList1);
-	}
+	
 	getAndDisplay(".toDoList1");
 };
 

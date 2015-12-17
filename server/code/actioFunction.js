@@ -52,6 +52,9 @@ function deleteToDoById(id){
     $.get("/todo/delete" + "?id=" + id, console.log());
 }
 
-function getAndDisplay(toDoList, location, function(toDoList) {
-    displayToDoList(toDoList, location);
-})
+function getAndDisplay(location) {
+    function callBack(){
+        displayToDoList(toDoList1, location)
+    }
+    getToDoList(toDoList1);
+}
