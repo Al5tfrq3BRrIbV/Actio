@@ -41,6 +41,6 @@ function deleteToDo(toDo){
     $.get("/delete/todo" + "?id=" + toDo.id, console.log());
 }
 
-function getToDo(id){
-    $.get("")
+function deleteToDoById(id){
+    $.get("/delete/todo" + "?id=" + id, console.log());
 }

@@ -29,7 +29,7 @@ app.get("/request/todo", function (req, res) {
 app.get("/add/todo", function (req, res) {
     var query = url.parse(req.url, true).query;
 
-    if(query.text !== undefined){
+    if(query.id !== undefined){
         sqlconnection.query("INSERT INTO Todos VALUES ('" + query.id + "', '"
             + query.text + "', '" + query.priority + "', '" + query.dueDate
             + "', '" + query.done + "', '" + query.user + "', '" + query.category + "');");
@@ -42,7 +42,7 @@ app.get("/add/todo", function (req, res) {
 app.get("/update/todo", function (req, res) {
     var query = url.parse(req.url, true).query;
 
-    if(query.text !== undefined){
+    if(query.id !== undefined){
         sqlconnection.query("UPDATE Todos SET "
             + "text='" + query.text + "', priority='" + query.priority + "', date='" + query.dueDate + "', done='"
             + query.done + "', user='" + query.user + "', category='" + query.category

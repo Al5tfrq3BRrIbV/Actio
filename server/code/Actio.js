@@ -16,8 +16,6 @@ var main = function() {
 	getToDoList(toDoList1, ".toDoList1");
 
 	uploadToDo(secondTodo);
-
-	deleteToDo(thirdTodo);
 		
 };
 
