@@ -13,8 +13,17 @@ function ToDoList(category) {
 	this.list = [];
 	this.readToDoList = function(dataIn) {
 		JSON.parse(dataIn).forEach( $.proxy( function (toDoIn) {
-			this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user, toDoIn.category));
+			if(!this.checkExists(toDoIn.id)) {
+				this.list.push(new ToDo(toDoIn.id, toDoIn.text, toDoIn.priority, toDoIn.dueDate, toDoIn.done, toDoIn.user, toDoIn.category));
+			}
 		}), this.toDoList);
 		this.display(this.toDoList, this.location);
+	}
+	this.checkExists = function(id) {
+		console.log(this);
+		for(i=0;i<this.list.length;i++){
+			if(id === this.list[i].id) return true;
+		}
+		return false;
 	}
 }
