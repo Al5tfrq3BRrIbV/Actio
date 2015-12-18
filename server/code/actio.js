@@ -19,8 +19,6 @@ var main = function() {
 		getToDoList(toDoList1),
 		displayToDoList(toDoList1, ".todos")
 	]);
-
-	f(displayToDoList, toDoList1, ".todos");
 };
 
 /*var addToDo = function(toDos) {
