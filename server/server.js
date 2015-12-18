@@ -88,21 +88,21 @@ app.get("/todo/delete", function (req, res) {
 });
 
 app.get("/statistics/todos", function (req, res) {
-    sqlconnection.query("SELECT COUNT(*) FROM Todos", function (err, nrOfToDos){
+    sqlconnection.query("SELECT COUNT(*) as nrOfToDos FROM Todos", function (err, nrOfToDos){
         if(err) console.log(err);
         res.end(JSON.stringify(nrOfToDos));
     });
 });
 
 app.get("/statistics/users", function (req, res) {
-    sqlconnection.query("SELECT COUNT(*) FROM Users", function (err, nrOfUsers){
+    sqlconnection.query("SELECT COUNT(*) as nrOfUsers FROM Users", function (err, nrOfUsers){
         if(err) console.log(err);
         res.end(JSON.stringify(nrOfUsers));
     });
 });
 
 app.get("/statistics/mosttodos", function (req, res) {
-    sqlconnection.query("SELECT user, COUNT(*) FROM Todos" +
+    sqlconnection.query("SELECT user, COUNT(*) as nrOfToDos FROM Todos" +
         " GROUP BY user HAVING COUNT(*) = (SELECT COUNT(*)" +
         " FROM Todos GROUP BY user ORDER BY COUNT(*)" +
         " DESC LIMIT 1);", function (err, userMost){
