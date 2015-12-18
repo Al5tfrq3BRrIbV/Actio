@@ -15,7 +15,7 @@ var sqlconnection = mysql.createConnection(
 );
 
 app.get("/", function (req, res) {
-    url="vandenheuvel.ml/index.html";
+    url="vandenheuvel.ml/splash.html";
     if (req.accepts('html')) {
         body = '<p>' + http.STATUS_CODES[status] + '. Redirecting to <a href="' + url + '">' + url + '</a></p>';
         this.header('Content-Type', 'text/html');
