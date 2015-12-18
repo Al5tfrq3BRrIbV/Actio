@@ -15,7 +15,18 @@ var sqlconnection = mysql.createConnection(
 );
 
 app.get("/", function (req, res) {
-    res.send("What?");
+    url="vandenheuvel.ml/index.html";
+    if (req.accepts('html')) {
+        body = '<p>' + http.STATUS_CODES[status] + '. Redirecting to <a href="' + url + '">' + url + '</a></p>';
+        this.header('Content-Type', 'text/html');
+    } else {
+        body = http.STATUS_CODES[status] + '. Redirecting to ' + url;
+        this.header('Content-Type', 'text/plain');
+    }
+
+    this.statusCode = status;
+    this.header('Location', url);
+    this.end(body);
 });
 
 app.get("/todo/request", function (req, res) {
@@ -90,7 +101,7 @@ app.get("/statistics/users", function (req, res) {
     });
 });
 
-app.get("/statistics/mosttodos"), function (req, res) {
+app.get("/statistics/mosttodos", function (req, res) {
     sqlconnection.query("SELECT user, COUNT(*) FROM Todos" +
         " GROUP BY user HAVING COUNT(*) = (SELECT COUNT(*)" +
         " FROM Todos GROUP BY user ORDER BY COUNT(*)" +
@@ -98,7 +109,9 @@ app.get("/statistics/mosttodos"), function (req, res) {
         if(err) console.log(err);
         res.end(JSON.stringify(userMost));
     });
-}
+});
+
+
 http.createServer(app).listen(8090, '0.0.0.0');
 
 console.log("Now running on port 8090.");
