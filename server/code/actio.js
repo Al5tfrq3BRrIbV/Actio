@@ -15,6 +15,8 @@ var main = function() {
 	getToDoList(toDoList1);
 
 	displayToDoList(toDoList1, ".todos");
+
+	setTimeout(console.log(1), 1000);
 };
 
 /*var addToDo = function(toDos) {
