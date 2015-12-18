@@ -1,24 +1,22 @@
 var main = function() {
 	"use strict";
 	
-	var firstTodo = new ToDo("4", "name1", 0, "date1", 0, "user1", "category1");
-	var secondTodo = new ToDo("5", "name2", 0, "date1", 0, "user1", "category1");
-	var thirdTodo = new ToDo("6", "name3", 0, "date1", 0, "user1", "category1");
+	var firstTodo = new ToDo(undefined, "name1", 3, "date1", 1, "user1", "category1");
+	var secondTodo = new ToDo(undefined, "name2", 1, "date1", 0, "user1", "category1");
+	var thirdTodo = new ToDo(undefined, "name3", 2, "date1", 0, "user1", "category1");
 
-	displayToDo(firstTodo, ".toDoList1");
-	displayToDo(secondTodo, ".toDoList1 .subToDoList1");
-	displayToDo(thirdTodo, ".toDoList1 .subToDoList2");
+	displayToDo(firstTodo, ".todos");
 
 	var toDoList1 = new ToDoList("category1");
-	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(secondTodo);
+	toDoList1.list.push(thirdTodo);
 
 	getToDoList(toDoList1);
 
-	displayToDoList(toDoList1, ".toDoList1");
+	displayToDoList(toDoList1, ".todos");
 };
 
-var addToDo = function(toDos) {
+/*var addToDo = function(toDos) {
 	if($(".add input").val() !==""){
 		cleanup();
 		var newCheckBox = $('<input type="checkbox">');
@@ -71,6 +69,6 @@ $(".edit input").on("keypress", function (event) {
 
 function cleanup(){
 	document.getElementById("editmessage").innerHTML="";
-}
+}*/
 
 $(document).ready(main);

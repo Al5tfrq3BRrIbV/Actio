@@ -1,8 +1,14 @@
 var displayToDo = function (toDo, locationSection){
-    var newCheckBox = $('<input type="checkbox">');
-    var newButton = $("<button>").text("X");
+    //var newCheckBox = $('<input type="checkbox">');
+    var newButton = $('<button class="delete">').text("X");
     buttonEvents(newButton);
-    var newToDo = $("<p>").text(toDo.text + " " + toDo.dueDate).append(newButton).prepend(newCheckBox);
+    if(toDo.done===1){
+        var classDone="done";
+    }
+    else{
+        var classDone="todo";
+    }
+    var newToDo = $('<p class="'+classDone+'" data-due="'+toDo.dueDate+'" data-priority="'+toDo.priority+'">').text(toDo.text).append(newButton)/*.prepend(newCheckBox)*/;
     $(locationSection).append(newToDo);
 };
 
