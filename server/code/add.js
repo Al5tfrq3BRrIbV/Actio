@@ -1,11 +1,13 @@
 var add = function(event) {
-	console.log("clicked");
-	var newToDo = new ToDo(undefined,$("input.title").val(),$("input[name=priority]:checked").val(),$("input.date").val(),0,"user1",$("input.category").val());
-	uploadToDo(newToDo);
+	if($("input.title").val() && $("input.date").val() && $("input.category").val()){
+		var newToDo = new ToDo(undefined,$("input.title").val(),$("input[name=priority]:checked").val(),$("input.date").val(),0,"user1",$("input.category").val());
+		uploadToDo(newToDo);
+	}
 };
 
-/*$(".confirmAdd").on("click"), function (event) {
-	console.log("clicked");
-	var newToDo = new ToDo(undefined,$("input.title").val(),$("input[name=priority]:checked").val(),$("input.date").val(),0,"user1",$("input.category").val());
-	displayToDo(newToDo,".todos");
-};*/
+$(".addToDos input").on("keypress", function (event) {
+	if(event.keyCode === 13) {
+		add();
+	}
+});
+
