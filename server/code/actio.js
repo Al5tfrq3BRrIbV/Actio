@@ -8,12 +8,19 @@ var main = function() {
 	displayToDo(firstTodo, ".todos");
 
 	var toDoList1 = new ToDoList("category1");
-	toDoList1.list.push(secondTodo);
+	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(thirdTodo);
 
-	getToDoList(toDoList1);
+	/*getToDoList(toDoList1);
 
-	displayToDoList(toDoList1, ".todos");
+	displayToDoList(toDoList1, ".todos");*/
+
+	function f(done, toDoList, location){
+		getToDoList(toDoList);
+		done(toDoList, location);
+	}
+
+	f(displayToDoList, toDoList1, ".todos");
 };
 
 /*var addToDo = function(toDos) {

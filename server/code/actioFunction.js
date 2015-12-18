@@ -19,7 +19,7 @@ function buttonEvents(el){
 }
 
 function getToDoList(toDoList){
-	$.get("/todo/request", $.proxy(toDoList.readToDoList, toDoList));
+    $.get("/todo/request", $.proxy(toDoList.readToDoList, toDoList));
 }
 
 function getToDoListByCategory(toDoList, location, category){
