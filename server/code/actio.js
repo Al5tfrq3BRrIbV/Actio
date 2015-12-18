@@ -11,9 +11,16 @@ var main = function() {
 	toDoList1.list.push(secondTodo);
 	toDoList1.list.push(thirdTodo);
 
-	getToDoList(toDoList1);
+	/*getToDoList(toDoList1);
 
-	displayToDoList(toDoList1, ".todos");
+	displayToDoList(toDoList1, ".todos");*/
+
+	function f(done, toDoList, location){
+		getToDoList(toDoList);
+		done(toDoList, location);
+	}
+
+	f(displayToDoList, toDoList1, ".todos");
 };
 
 /*var addToDo = function(toDos) {
