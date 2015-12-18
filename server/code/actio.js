@@ -15,10 +15,10 @@ var main = function() {
 
 	displayToDoList(toDoList1, ".todos");*/
 
-	function f(done, toDoList, location){
-		getToDoList(toDoList);
-		done(toDoList, location);
-	}
+	async.series([
+		getToDoList(toDoList1),
+		displayToDoList(toDoList1, ".todos")
+	]);
 
 	f(displayToDoList, toDoList1, ".todos");
 };
