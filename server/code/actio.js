@@ -1,26 +1,22 @@
 var main = function() {
 	"use strict";
 	
-	var firstTodo = new ToDo(undefined, "name1", 3, "date1", 1, "user1", "category1");
-	var secondTodo = new ToDo(undefined, "name2", 1, "date1", 0, "user1", "category1");
-	var thirdTodo = new ToDo(undefined, "name3", 2, "date1", 0, "user1", "category1");
+	var firstTodo = new ToDo(undefined, "name1", 3, "04-01-2016", 1, "user1", "category1");
+	var secondTodo = new ToDo(undefined, "name2", 1, "05-02-2017", 0, "user1", "category1");
+	var thirdTodo = new ToDo(undefined, "name3", 2, "02-01-2016", 0, "user1", "category1");
 
 	displayToDo(firstTodo, ".todos");
 
 	var toDoList1 = new ToDoList("category1");
 	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(thirdTodo);
+	toDoList1.list.push(secondTodo);
 
-	/*getToDoList(toDoList1);
+	getToDoList(toDoList1);
 
-	displayToDoList(toDoList1, ".todos");*/
+	displayToDoList(toDoList1, ".todos");
 
-	async.series([
-		getToDoList(toDoList1),
-		displayToDoList(toDoList1, ".todos")
-	]);
-
-	f(displayToDoList, toDoList1, ".todos");
+	setTimeout(console.log(1), 8000);
 };
 
 /*var addToDo = function(toDos) {
