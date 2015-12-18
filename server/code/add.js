@@ -13,3 +13,7 @@ $(".addToDos input").on("keypress", function (event) {
 	}
 });
 
+var delete = function(event) {
+	var toDo = this.parent.innerHTML;
+}
+
