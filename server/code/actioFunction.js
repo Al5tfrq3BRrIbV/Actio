@@ -57,3 +57,8 @@ function deleteToDo(toDo){
 function deleteToDoById(id){
     $.get("/todo/delete" + "?id=" + id, console.log());
 }
+
+function avgToDosPerUser(nrOfToDos, nrOfUsers){
+    return nrOfToDos/nrOfUsers;
+}
+

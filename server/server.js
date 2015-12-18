@@ -76,6 +76,29 @@ app.get("/todo/delete", function (req, res) {
     }
 });
 
+app.get("/statistics/todos", function (req, res) {
+    sqlconnection.query("SELECT COUNT(*) FROM Todos", function (err, nrOfToDos){
+        if(err) console.log(err);
+        res.end(JSON.stringify(nrOfToDos));
+    });
+});
+
+app.get("/statistics/users", function (req, res) {
+    sqlconnection.query("SELECT COUNT(*) FROM Users", function (err, nrOfUsers){
+        if(err) console.log(err);
+        res.end(JSON.stringify(nrOfUsers));
+    });
+});
+
+app.get("/statistics/mosttodos"), function (req, res) {
+    sqlconnection.query("SELECT user, COUNT(*) FROM Todos" +
+        " GROUP BY user HAVING COUNT(*) = (SELECT COUNT(*)" +
+        " FROM Todos GROUP BY user ORDER BY COUNT(*)" +
+        " DESC LIMIT 1);", function (err, userMost){
+        if(err) console.log(err);
+        res.end(JSON.stringify(userMost));
+    });
+}
 http.createServer(app).listen(8090, '0.0.0.0');
 
 console.log("Now running on port 8090.");
