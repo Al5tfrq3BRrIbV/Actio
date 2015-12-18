@@ -1,6 +1,6 @@
 var displayToDo = function (toDo, locationSection){
     //var newCheckBox = $('<input type="checkbox">');
-    var newButton = $('<button class="delete" onclick="delete()">').text("X");
+    var newButton = $('<button class="delete" onclick="del()">').text("X");
     buttonEvents(newButton);
     if(toDo.done===1){
         var classDone="done";
