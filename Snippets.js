@@ -5,3 +5,6 @@ $.proxy(function(){console.log(this.a);}, {a: 15})();
         console.log(a+b);
     };
 })(15)
+
+
+$.get("/todo/request", $.proxy(toDoList.readToDoList, toDoList));
