@@ -8,7 +8,7 @@ var main = function() {
 	displayToDo(firstTodo, ".todos");
 
 	var toDoList1 = new ToDoList("category1");
-	toDoList1.list.push(secondTodo);
+	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(thirdTodo);
 
 	/*getToDoList(toDoList1);
