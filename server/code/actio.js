@@ -11,9 +11,9 @@ var main = function() {
 	toDoList1.list.push(firstTodo);
 	toDoList1.list.push(thirdTodo);
 
-	/*getToDoList(toDoList1);
+	getToDoList(toDoList1);
 
-	displayToDoList(toDoList1, ".todos");*/
+	setTimeout(displayToDoList(toDoList1, ".todos"), 1500);
 
 	async.series([
 		getToDoList(toDoList1),
